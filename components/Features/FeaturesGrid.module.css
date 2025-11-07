@@ -1,0 +1,22 @@
+.section {
+  background-color: var(--app-background);
+  color: var(--app-text-primary);
+  padding-top: calc(var(--mantine-spacing-xl) * 4);
+  padding-bottom: calc(var(--mantine-spacing-xl) * 4);
+}
+
+.wrapper {
+  color: inherit;
+}
+
+.title {
+  font-weight: 500;
+  margin-bottom: var(--mantine-spacing-md);
+  text-align: center;
+  color: var(--app-text-primary);
+}
+
+.description {
+  text-align: center;
+  color: var(--app-text-secondary);
+}

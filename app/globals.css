@@ -1,0 +1,25 @@
+/* Global theme tokens */
+:root {
+  --app-background: #f3f4f6;
+  --app-surface: #ffffff;
+  --app-border: #e5e7eb;
+  --app-text-primary: #0f172a;
+  --app-text-secondary: #475569;
+  --app-text-muted: #64748b;
+  --app-accent: #2563eb;
+}
+
+body {
+  margin: 0;
+  background-color: var(--app-background);
+  color: var(--app-text-secondary);
+}
+
+a {
+  color: var(--app-accent);
+}
+
+section {
+  background-color: var(--app-background);
+}
+

@@ -1,0 +1,43 @@
+.header {
+  height: 56px;
+  background-color: var(--app-background);
+  border-bottom: 1px solid var(--app-border);
+}
+
+.inner {
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--app-text-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.brand:hover {
+  color: var(--app-accent);
+}
+
+.link {
+  display: block;
+  line-height: 1;
+  padding: 8px 12px;
+  border-radius: var(--mantine-radius-sm);
+  text-decoration: none;
+  color: var(--app-text-secondary);
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 500;
+
+  @mixin hover {
+    background-color: var(--app-surface);
+  }
+}
+
+.linkLabel {
+  margin-right: 5px;
+}
