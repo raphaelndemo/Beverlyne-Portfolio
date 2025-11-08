@@ -1,4 +1,5 @@
 'use client';
+
 import { Carousel } from '@mantine/carousel';
 import { Container, Paper, Text, Title } from '@mantine/core';
 import { IconChevronLeft, IconChevronRight, IconQuote } from '@tabler/icons-react';
@@ -22,14 +23,15 @@ function TestimonialCard({ title, text, name, avatar }: TestimonialProps) {
       <Text className={classes.text} mt="md">
         {text}
       </Text>
-      <div className={classes.rating} mt="md">
+      {/* Removed invalid "mt" prop on <div> */}
+      <div className={classes.rating}>
         {[...Array(5)].map((_, i) => (
           <span key={i} className={classes.star}>
             ★
           </span>
         ))}
       </div>
-      <div className={classes.author} mt="lg">
+      <div className={classes.author}>
         <div className={classes.avatar}>
           <img src={avatar} alt={name} />
         </div>
@@ -45,19 +47,19 @@ const testimonials = [
   {
     title: 'I achieved results I never thought possible.',
     text: 'After just three months of personalized training, I lost 8kg and gained confidence in my body. Beverlyne’s approach is holistic, combining strength training, nutrition, and mindset. She’s hands-down the best personal trainer in Nairobi!',
-    name: ' Faith M',
+    name: 'Faith M',
     avatar: 'https://images.pexels.com/photos/3746300/pexels-photo-3746300.jpeg',
   },
   {
     title: 'Professional, patient, and incredibly motivating.',
     text: 'I’ve worked with several coaches before, but none as dedicated as Beverlyne. She listens, adjusts every session to my needs, and pushes me to perform my best. If you want real progress, this is the trainer for you.',
-    name: ' Angela K',
+    name: 'Angela K',
     avatar: 'https://images.pexels.com/photos/32617646/pexels-photo-32617646.jpeg',
   },
   {
     title: 'More energy, better posture, and total lifestyle change.',
     text: 'Before joining, I felt tired all the time. After consistent coaching, my energy levels skyrocketed, and I now enjoy working out. Beverlyne’s fitness programs are practical, effective, and truly life-changing.',
-    name: ' Caroline N',
+    name: 'Caroline N',
     avatar: 'https://images.pexels.com/photos/32421200/pexels-photo-32421200.jpeg',
   },
   {
@@ -77,21 +79,14 @@ export function TestimonialsCarousel() {
     if (!carouselElement) return;
 
     const startAutoplay = () => {
-      stopAutoplay(); // Clear any existing interval
+      stopAutoplay();
       autoplayRef.current = setInterval(() => {
-        // Find all carousel control buttons (Mantine Carousel buttons)
         const buttons = Array.from(carouselElement.querySelectorAll('button')).filter(
           (btn) => !btn.hasAttribute('data-inactive') && !btn.disabled
         );
-        
-        // The next button is typically the rightmost/second button
-        // Try to find it by position or just use the last enabled button
         if (buttons.length > 0) {
-          // If there are 2 buttons, the second one is next. Otherwise use the last one
           const nextButton = buttons.length >= 2 ? buttons[1] : buttons[buttons.length - 1];
-          if (nextButton) {
-            nextButton.click();
-          }
+          nextButton?.click();
         }
       }, 4000);
     };
@@ -103,12 +98,8 @@ export function TestimonialsCarousel() {
       }
     };
 
-    // Wait for carousel to initialize
-    const timeoutId = setTimeout(() => {
-      startAutoplay();
-    }, 1000);
+    const timeoutId = setTimeout(startAutoplay, 1000);
 
-    // Pause on hover
     carouselElement.addEventListener('mouseenter', stopAutoplay);
     carouselElement.addEventListener('mouseleave', startAutoplay);
 
@@ -138,7 +129,6 @@ export function TestimonialsCarousel() {
         <Carousel
           slideSize={{ base: '100%', sm: '33.333333%' }}
           slideGap="md"
-          align="start"
           withControls
           nextControlIcon={<IconChevronRight size={16} />}
           previousControlIcon={<IconChevronLeft size={16} />}
@@ -147,7 +137,7 @@ export function TestimonialsCarousel() {
             root: classes.carouselRoot,
           }}
           emblaOptions={{
-            align: 'start',
+            align: 'start', 
             loop: true,
           }}
         >
@@ -157,4 +147,3 @@ export function TestimonialsCarousel() {
     </Container>
   );
 }
-
