@@ -26,7 +26,7 @@ function ContactIcon({ icon: Icon, title, description, ...others }: ContactIconP
 }
 
 const MOCKDATA = [
-  { title: 'Email', description: 'beverlynendemo9@gmail.com', icon: IconAt },
+  { title: 'Email', description: 'beverlyne919@gmail.com', icon: IconAt },
   { title: 'Phone', description: '+254 742 065 551', icon: IconPhone },
   { title: 'Address', description: 'Nairobi, Kenya', icon: IconMapPin },
   { title: 'Working hours', description: '8 a.m. – 7 p.m.', icon: IconSun },

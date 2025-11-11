@@ -89,7 +89,7 @@
   overflow: hidden;
   box-shadow: var(--mantine-shadow-lg);
   min-height: 200px;
-  max-height: 450px;
+  max-height: 500px;
 }
 
 .video {

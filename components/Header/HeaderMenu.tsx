@@ -36,7 +36,7 @@ export function HeaderMenu() {
       <Container size="md">
         <div className={classes.inner}>
           <a href="#hero" className={classes.brand} onClick={(event) => handleNavClick(event, '#hero')}>
-            Beverlyne Fitness
+            TheFitFlowExperience
           </a>
           <Group gap={5} visibleFrom="sm">
             {items}

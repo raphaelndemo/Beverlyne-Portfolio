@@ -25,9 +25,9 @@ export function ReactiveBio() {
           <Grid gutter="lg" align="stretch">
           <Grid.Col span={{ base: 12, md: 6 }}>
             <SimpleGrid cols={{ base: 1, sm: 3 }} spacing="md" mb="lg">
-              <StatCard number="15" label="Years Experience" />
-              <StatCard number="70+" label="Satisfied Clients" />
-              <StatCard number="170+" label="Trained Athletes" />
+              <StatCard number="5" label="Years Experience" />
+              <StatCard number="170+" label="Satisfied Clients" />
+              <StatCard number="70+" label="Trained Athletes" />
             </SimpleGrid>
 
             <Paper className={classes.whoIAmCard} p="xl" radius="md">
