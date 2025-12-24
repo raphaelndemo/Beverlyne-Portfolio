@@ -52,6 +52,7 @@ If you're not using Gmail, you can modify the transporter configuration in `app/
 - **Custom SMTP**: Use the `host`, `port`, and `secure` options instead of `service`
 
 Example for custom SMTP:
+
 ```typescript
 const transporter = nodemailer.createTransport({
   host: 'smtp.yourdomain.com',
@@ -63,4 +64,3 @@ const transporter = nodemailer.createTransport({
   },
 });
 ```
-

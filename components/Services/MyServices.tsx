@@ -1,6 +1,7 @@
 'use client';
-import { Button, Container, Group, Paper, Text, Title } from '@mantine/core';
+
 import { IconArrowRight } from '@tabler/icons-react';
+import { Button, Container, Group, Paper, Text, Title } from '@mantine/core';
 import classes from './MyServices.module.css';
 
 export function MyServices() {
@@ -18,18 +19,33 @@ export function MyServices() {
         <Title order={1} className={classes.title} ta="center" mb="md">
           Explore the complete range of services my coaching provides.
         </Title>
-        <Text className={classes.description} ta="center" size="md" c="dimmed" maw={600} mx="auto" mb="xl">
-          My Coaching offers personalized fitness plans and expert guidance to help you reach your goals
-          and boost your performance.
+        <Text
+          className={classes.description}
+          ta="center"
+          size="md"
+          c="dimmed"
+          maw={600}
+          mx="auto"
+          mb="xl"
+        >
+          My Coaching offers personalized fitness plans and expert guidance to help you reach your
+          goals and boost your performance.
         </Text>
 
-        <Paper withBorder className={classes.cta} shadow="lg" radius="md" p={{ base: 'xl', md: 'xl' }}>
+        <Paper
+          withBorder
+          className={classes.cta}
+          shadow="lg"
+          radius="md"
+          p={{ base: 'xl', md: 'xl' }}
+        >
           <Title order={2} className={classes.ctaTitle} ta="center">
             Ready to transform your fitness journey?
           </Title>
           <Text className={classes.ctaDescription} ta="center" size="md" mb="lg">
-            Book a complimentary strategy session and we’ll map out the exact plan to help you reach your
-            goals faster—with accountability, expert guidance, and a program tailored just for you.
+            Book a complimentary strategy session and we’ll map out the exact plan to help you reach
+            your goals faster—with accountability, expert guidance, and a program tailored just for
+            you.
           </Text>
           <Group justify="center" className={classes.ctaActions}>
             <Button
@@ -57,4 +73,3 @@ export function MyServices() {
     </section>
   );
 }
-

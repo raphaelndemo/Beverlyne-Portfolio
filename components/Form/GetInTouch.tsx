@@ -1,7 +1,18 @@
 'use client';
+
 import { useState } from 'react';
-import { Button, Container, Group, Paper, SimpleGrid, Text, Textarea, TextInput, Notification } from '@mantine/core';
 import { IconCheck, IconX } from '@tabler/icons-react';
+import {
+  Button,
+  Container,
+  Group,
+  Notification,
+  Paper,
+  SimpleGrid,
+  Text,
+  Textarea,
+  TextInput,
+} from '@mantine/core';
 import { ContactIconsList } from './ContactIcons';
 import classes from './GetInTouch.module.css';
 
@@ -11,7 +22,10 @@ export function GetInTouch() {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
-  const [notification, setNotification] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+  const [notification, setNotification] = useState<{
+    type: 'success' | 'error';
+    message: string;
+  } | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,14 +44,20 @@ export function GetInTouch() {
       const data = await response.json();
 
       if (response.ok) {
-        setNotification({ type: 'success', message: 'Message sent successfully! I\'ll get back to you soon.' });
+        setNotification({
+          type: 'success',
+          message: "Message sent successfully! I'll get back to you soon.",
+        });
         // Reset form
         setName('');
         setEmail('');
         setSubject('');
         setMessage('');
       } else {
-        setNotification({ type: 'error', message: data.error || 'Failed to send message. Please try again.' });
+        setNotification({
+          type: 'error',
+          message: data.error || 'Failed to send message. Please try again.',
+        });
       }
     } catch (error) {
       setNotification({ type: 'error', message: 'An error occurred. Please try again later.' });
@@ -65,7 +85,9 @@ export function GetInTouch() {
 
             {notification && (
               <Notification
-                icon={notification.type === 'success' ? <IconCheck size={18} /> : <IconX size={18} />}
+                icon={
+                  notification.type === 'success' ? <IconCheck size={18} /> : <IconX size={18} />
+                }
                 color={notification.type === 'success' ? 'teal' : 'red'}
                 title={notification.type === 'success' ? 'Success' : 'Error'}
                 onClose={() => setNotification(null)}
@@ -118,7 +140,12 @@ export function GetInTouch() {
               />
 
               <Group justify="flex-end" mt="md">
-                <Button type="submit" className={classes.control} loading={loading} disabled={loading}>
+                <Button
+                  type="submit"
+                  className={classes.control}
+                  loading={loading}
+                  disabled={loading}
+                >
                   Send message
                 </Button>
               </Group>

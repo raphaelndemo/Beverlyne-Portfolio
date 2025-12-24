@@ -1,4 +1,5 @@
 'use client';
+
 import { MouseEvent } from 'react';
 import { IconBrandInstagram, IconBrandTiktok } from '@tabler/icons-react';
 import { ActionIcon, Anchor, Group } from '@mantine/core';
@@ -8,7 +9,9 @@ import classes from './FooterCentered.module.css';
 export function FooterCentered() {
   const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
     const hashIndex = href.indexOf('#');
-    if (hashIndex === -1) {return;}
+    if (hashIndex === -1) {
+      return;
+    }
 
     event.preventDefault();
     const id = href.slice(hashIndex + 1);
@@ -42,7 +45,11 @@ export function FooterCentered() {
   return (
     <footer className={classes.footer}>
       <div className={classes.inner}>
-        <a href="#hero" className={classes.brand} onClick={(event) => handleNavClick(event, '#hero')}>
+        <a
+          href="#hero"
+          className={classes.brand}
+          onClick={(event) => handleNavClick(event, '#hero')}
+        >
           TheFitFlowExperience
         </a>
 
