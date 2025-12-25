@@ -7,4 +7,3 @@ export const navLinks = [
   { href: '#testimonials', label: 'Testimonials' },
   { href: '#contact', label: 'Contact' },
 ];
-

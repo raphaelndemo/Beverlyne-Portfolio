@@ -1,9 +1,9 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
+import { IconChevronLeft, IconChevronRight, IconQuote } from '@tabler/icons-react';
 import { Carousel } from '@mantine/carousel';
 import { Container, Paper, Text, Title } from '@mantine/core';
-import { IconChevronLeft, IconChevronRight, IconQuote } from '@tabler/icons-react';
-import { useRef, useEffect } from 'react';
 import classes from './TestimonialsCarousel.module.css';
 
 interface TestimonialProps {
@@ -137,7 +137,7 @@ export function TestimonialsCarousel() {
             root: classes.carouselRoot,
           }}
           emblaOptions={{
-            align: 'start', 
+            align: 'start',
             loop: true,
           }}
         >

@@ -1,5 +1,4 @@
-
-import { IconRun, IconUsers, IconHeartbeat, IconApple } from '@tabler/icons-react';
+import { IconApple, IconHeartbeat, IconRun, IconUsers } from '@tabler/icons-react';
 import { Container, SimpleGrid, Text, ThemeIcon, Title } from '@mantine/core';
 import classes from './FeaturesGrid.module.css';
 
@@ -29,7 +28,6 @@ export const MOCKDATA = [
       'Get expert nutrition advice to complement your workouts. Learn how to fuel your body right for performance, recovery, and long-term health.',
   },
 ];
-
 
 interface FeatureProps {
   icon: React.FC<any>;
@@ -65,7 +63,9 @@ export function FeaturesGrid() {
 
         <Container size={560} p={0}>
           <Text size="md" className={classes.description}>
-            Whether you’re a beginner or a fitness enthusiast, I help you achieve real, lasting results through personalized programs, science-backed workouts, and one-on-one support — all tailored to your goals and schedule.
+            Whether you’re a beginner or a fitness enthusiast, I help you achieve real, lasting
+            results through personalized programs, science-backed workouts, and one-on-one support —
+            all tailored to your goals and schedule.
           </Text>
         </Container>
 

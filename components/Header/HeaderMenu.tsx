@@ -1,4 +1,5 @@
 'use client';
+
 import { MouseEvent } from 'react';
 import { Burger, Container, Group, Menu } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
@@ -35,7 +36,11 @@ export function HeaderMenu() {
     <header className={classes.header}>
       <Container size="md">
         <div className={classes.inner}>
-          <a href="#hero" className={classes.brand} onClick={(event) => handleNavClick(event, '#hero')}>
+          <a
+            href="#hero"
+            className={classes.brand}
+            onClick={(event) => handleNavClick(event, '#hero')}
+          >
             TheFitFlowExperience
           </a>
           <Group gap={5} visibleFrom="sm">
